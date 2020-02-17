@@ -21,11 +21,29 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
+    # Setting swapped to True to be able to utilize in the while
+    # Unable to utilize swapped if it is not declared before assignment
+    swapped = True
 
+    while swapped:
+        # Setting swapped to False, loop will continue to run
+        # Once swapped does not equal true, it goes to the next if
+        # and hits break
+        swapped = False
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+                print("Left Side: ", arr[i], arr[i + 1])
+                print("Right Side: ", arr[i + 1], arr[i])
+        if swapped == False:
+            break
+    print("arr: ", arr)
     return arr
 
-
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
 
     return arr
